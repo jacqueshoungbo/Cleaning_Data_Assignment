@@ -53,7 +53,7 @@ tt = merge(tt,activity_labels)
 if (file.exists("results/test_train_set.txt"))
     file.remove ("results/test_train_set.txt")
 file.create("results/test_train_set.txt")
-write.table(tt, "results/test_train_set.txt")
+write.table(tt, "results/test_train_set.txt", row.name=FALSE)
 grouped_subject_activity = group_by(tt, subject_id, activity_label)
 summary_table = summarise(grouped_subject_activity,
     mean(tBodyAcc_mean___X),mean(tBodyAcc_mean___Y),
